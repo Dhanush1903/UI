@@ -9,6 +9,7 @@ import { BookService } from 'src/app/book.service';
 })
 export class BooksComponent implements OnInit {
   book:Book=new Book();
+  books:Book[]=[];
  
   save(){
     const observable= this.bookService.createBook(this.book);
@@ -28,6 +29,12 @@ export class BooksComponent implements OnInit {
   constructor(public bookService:BookService) { }
 
   ngOnInit(): void {
+    const promise=this.bookService.getBooks();
+    promise.subscribe((response)=>{
+      console.log(response);
+      this.books=response as Book[];
+    })
+    
   }
 
 }
