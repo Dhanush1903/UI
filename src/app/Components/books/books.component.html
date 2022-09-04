@@ -1,4 +1,10 @@
 <h3>Register a Book</h3>
+<div>
+    
+<a class="nav-link" style="text-align: end;"  routerLink="/authorBooks" href="#">All My Books</a>
+<a class="nav-link" style="text-align: end;" routerLink="" href="#">Log Out</a>
+
+</div>
 
 <div class="input-group">
     <span class="input-group-text">Title</span>
@@ -49,7 +55,15 @@
 
 </div>
 
+<br>
+<div class="input-group">
+    <span class="input-group-text">Email</span>
+    <input type="text"  placeholder="please insert your email id" [(ngModel)]=book.email aria-label="First name"
+        class="form-control">
+    </div>
+
 
 <br>
 <button class="btn btn-primary" (click)="save()">Save</button>
+
 

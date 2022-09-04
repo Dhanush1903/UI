@@ -6,6 +6,7 @@ export default class Book{
     publisher:string="";
     active:boolean=true;
     content:string="";
+    email:string="";
     
 
 }

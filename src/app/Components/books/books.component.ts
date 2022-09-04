@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Book from 'Entity/Book';
 import { BookService } from 'src/app/book.service';
 
@@ -16,6 +17,7 @@ export class BooksComponent implements OnInit {
     observable.subscribe(
       (response:any)=>{
         console.log(response);
+        alert("Saved Succesfully")
       },
       function(error){
         console.log(error);
@@ -26,7 +28,8 @@ export class BooksComponent implements OnInit {
   
   }
 
-  constructor(public bookService:BookService) { }
+  constructor(public bookService:BookService,
+    public router:Router) { }
 
   ngOnInit(): void {
     const promise=this.bookService.getBooks();
@@ -36,5 +39,7 @@ export class BooksComponent implements OnInit {
     })
     
   }
+
+  
 
 }

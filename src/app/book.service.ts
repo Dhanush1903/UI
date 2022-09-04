@@ -31,6 +31,7 @@ export class BookService {
   publisher:string;
   active:boolean;
   content:string;
+  email:string;
   
 
   }){
@@ -46,6 +47,11 @@ export class BookService {
     }){
       return this.http.post(URLLOGIN, author)
   
+    }
+
+    retrieveAllByEmail(email:string){
+      return this.http.get(`http://localhost:8083/getbookbyemail/${email}`)
+
     }
 
   constructor(public http:HttpClient) { }
