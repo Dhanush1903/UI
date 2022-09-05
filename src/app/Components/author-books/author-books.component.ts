@@ -40,6 +40,7 @@ this.router.navigate(['updateBook',id])
       promise.subscribe((response)=>{
         console.log(response);
         this.getByEmail(this.book.email);
+        alert("Deleted Succesfully")
       })
 
     }
