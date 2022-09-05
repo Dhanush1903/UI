@@ -70,6 +70,10 @@ updateBook(id:number, books:{   title:string;
 
 }
 
+deleteBook(id:number){
+  return this.http.delete(`http://localhost:8083/book/${id}`);
+}
+
 
   constructor(public http:HttpClient) { }
 }

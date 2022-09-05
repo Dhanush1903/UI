@@ -35,7 +35,8 @@
             <td>{{book.publisher}}</td>
             <td>{{book.active}}</td>
             <td>{{book.content}}</td>
-            <td><button (click)="editBook(book.id)">Edit</button></td>
+            <td><button (click)="editBook(book.id)">Edit</button>
+            <button (click)="deleteBook(book.id)" style="margin: left 10px ;">Delete</button></td>
 
             
         </tr>

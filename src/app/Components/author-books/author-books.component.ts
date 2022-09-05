@@ -35,6 +35,14 @@ this.router.navigate(['updateBook',id])
 
     }
     
+    deleteBook(id:number){
+      const promise=this.bookService.deleteBook(id);
+      promise.subscribe((response)=>{
+        console.log(response);
+        this.getByEmail(this.book.email);
+      })
+
+    }
    
 
   }
