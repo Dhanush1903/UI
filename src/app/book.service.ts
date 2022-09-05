@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 const URL="http://localhost:8083/book"
 const URLGET="http://localhost:8083/allBooks"
 
-const URLLOGIN="http://localhost:8088/login"
+const URLLOGIN="http://localhost:8088/login" 
 
 
 @Injectable({
@@ -53,6 +53,23 @@ export class BookService {
       return this.http.get(`http://localhost:8083/getbookbyemail/${email}`)
 
     }
+
+updateBook(id:number, books:{   title:string;
+  category:string;
+  image:string;
+  price:number;
+  publisher:string;
+  active:boolean;
+  content:string;
+  
+  
+
+  }){
+  return this.http.put(`http://localhost:8083/update/${id}`,books)
+
+
+}
+
 
   constructor(public http:HttpClient) { }
 }

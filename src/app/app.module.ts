@@ -11,6 +11,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { SearchResultsComponent } from './Components/search-results/search-results.component';
 import { LoginComponent } from './Components/login/login.component';
 import { AuthorBooksComponent } from './Components/author-books/author-books.component';
+import { UpdateBookComponent } from './Components/update-book/update-book.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthorBooksComponent } from './Components/author-books/author-books.com
     HomeComponent,
     SearchResultsComponent,
     LoginComponent,
-    AuthorBooksComponent
+    AuthorBooksComponent,
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,

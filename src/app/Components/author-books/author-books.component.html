@@ -21,6 +21,8 @@
             <th>publisher</th>
             <th>active</th>
             <th>content</th>
+            <th>Action</th>
+
             
         </tr>
     </thead>
@@ -33,6 +35,7 @@
             <td>{{book.publisher}}</td>
             <td>{{book.active}}</td>
             <td>{{book.content}}</td>
+            <td><button (click)="editBook(book.id)">Edit</button></td>
 
             
         </tr>
