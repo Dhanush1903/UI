@@ -74,6 +74,20 @@ deleteBook(id:number){
   return this.http.delete(`http://localhost:8083/book/${id}`);
 }
 
+createAuthor( authors:{  
+  email:string;
+  authorName:string;
+  password:string;
+  
+ 
+
+  }      )      {
+    return this.http.post(`http://localhost:8088/author`, authors)
+
+}
+
+
+
 
   constructor(public http:HttpClient) { }
 }

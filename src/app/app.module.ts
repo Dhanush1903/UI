@@ -12,6 +12,7 @@ import { SearchResultsComponent } from './Components/search-results/search-resul
 import { LoginComponent } from './Components/login/login.component';
 import { AuthorBooksComponent } from './Components/author-books/author-books.component';
 import { UpdateBookComponent } from './Components/update-book/update-book.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UpdateBookComponent } from './Components/update-book/update-book.compon
     SearchResultsComponent,
     LoginComponent,
     AuthorBooksComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

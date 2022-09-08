@@ -6,6 +6,7 @@ import { BooksComponent } from 'src/app/Components/books/books.component';
 import { HomeComponent } from 'src/app/Components/home/home.component';
 import { LoginComponent } from 'src/app/Components/login/login.component';
 import { SearchResultsComponent } from 'src/app/Components/search-results/search-results.component';
+import { SignUpComponent } from 'src/app/Components/sign-up/sign-up.component';
 import { UpdateBookComponent } from 'src/app/Components/update-book/update-book.component';
 
 
@@ -17,7 +18,8 @@ const routes: Routes = [{path:'book',component:BooksComponent},
 {path:'searchResults',component:SearchResultsComponent},
 {path:'login',component:LoginComponent},
 {path:'authorBooks',component:AuthorBooksComponent},
-{path:'updateBook/:id',component:UpdateBookComponent}];
+{path:'updateBook/:id',component:UpdateBookComponent},
+{path:'signUp',component:SignUpComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
