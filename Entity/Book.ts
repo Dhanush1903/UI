@@ -8,6 +8,7 @@ export default class Book{
     active:boolean=true;
     content:string="";
     email:string="";
+    authorName:string="";
     
 
 }

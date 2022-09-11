@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import Book from 'Entity/Book';
 
 
 const URL="http://localhost:8083/book"
@@ -12,14 +14,24 @@ const URLLOGIN="http://localhost:8088/login"
   providedIn: 'root'
 })
 export class BookService {
+  book:Book=new Book();
+  
 
   getBooks(){
     return this.http.get(URLGET)
   }
 
-  searchBooks(){
-    return this.http.get(`http://localhost:8083/searchbooks?category{category}&authorName={authorName}&price={price}`)
+  searchBooks(authorName:any,publisher:any,category:any,price:any){
+    return this.http.get("	http://localhost:8083/searchBy/"+authorName+'/'+publisher+'/'+category+'/'+price);
   }
+
+//   getbyparams(): Observable<any>{
+// let params1= new HttpParams().set('category',this.category);
+// let params2= new HttpParams().set('authorName','mars');
+// let params3= new HttpParams().set('price','1390');
+// // let params2= new HttpParams().set('AuthorName','mystery');
+// return this.http.get("http://localhost:8083/searchbooks",{params:params1})
+//   }
 
   
   
@@ -32,6 +44,7 @@ export class BookService {
   active:boolean;
   content:string;
   email:string;
+  authorName:string;
   
 
   }){
@@ -91,3 +104,5 @@ createAuthor( authors:{
 
   constructor(public http:HttpClient) { }
 }
+
+
