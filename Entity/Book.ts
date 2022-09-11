@@ -1,5 +1,5 @@
 export default class Book{
-    id:number=5
+    id:number;
     title:string="";
     category:string="";
     image:string="";

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Book from 'Entity/Book';
+import Reader from 'Entity/Reader';
 import { BookService } from 'src/app/book.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { BookService } from 'src/app/book.service';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
+  id:number;
   book:Book=new Book();
   books:Book[]=[];
   category='';
@@ -16,18 +18,19 @@ export class SearchResultsComponent implements OnInit {
   price=0;
   publisher='';
 
+  reader:Reader=new Reader();
+  readers:Reader[]=[];
+
 
   constructor(public bookService:BookService,
     private activatedroute: ActivatedRoute) {
-      this.activatedroute.queryParams.subscribe(data=>{
-       
-       this.category= data.category;
-       this.authorName= data.authorName;
-       this.price= data.price;
-      })
+      
+      
      }
 
   ngOnInit(): void { 
+    this.reader = new Reader();
+    this.id=this.activatedroute.snapshot.params['id'];
     
     
   //   const promise=this.bookService.getBooks();
@@ -44,6 +47,22 @@ export class SearchResultsComponent implements OnInit {
 //     })}
 
 }
+buyBook(){
+  const observable= this.bookService.buyBook(this.id,this.reader);    
+  observable.subscribe(
+    (response:any)=>{
+      console.log(response);
+      alert("Payment Completed")
+    },
+    function(error){
+      console.log(error);
+      alert("Something went wrong please try again!")
+    }
+  )
+    
+
+}
+
 
 
 }

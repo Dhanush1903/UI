@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import Book from 'Entity/Book';
+
+
 
 
 const URL="http://localhost:8083/book"
@@ -14,7 +14,7 @@ const URLLOGIN="http://localhost:8088/login"
   providedIn: 'root'
 })
 export class BookService {
-  book:Book=new Book();
+  
   
 
   getBooks(){
@@ -50,6 +50,17 @@ export class BookService {
   }){
     return this.http.post(URL, books)
 
+  }
+
+  buyBook(id:number,readers:{ 
+    readerEmail:string;
+    readerName:string;
+    cardNumber:number;
+    cvv:number;
+    id:number;
+  }){
+
+    return this.http.post(`http://localhost:8085/buy/${id}`, readers)
   }
 
   authorlogin(author:{ 

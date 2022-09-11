@@ -88,6 +88,8 @@
             <th>publisher</th>
             <th>active</th>
             <th>content</th>
+            <th>Actions</th>
+
 
         </tr>
     </thead>
@@ -101,6 +103,7 @@
             <td>{{book.publisher}}</td>
             <td>{{book.active}}</td>
             <td>{{book.content}}</td>
+            <td><button (click)="addToCart(book.id)">Add to Cart</button></td>
         </tr>
     </tbody>
 

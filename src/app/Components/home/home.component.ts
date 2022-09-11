@@ -55,4 +55,9 @@ export class HomeComponent implements OnInit {
       this.books=response as Book[];
   })
   }
+  addToCart(id:number){
+    this.router.navigate(['searchResults',id])
+  }
+
+
 }
