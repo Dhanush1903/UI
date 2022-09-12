@@ -81,6 +81,7 @@
 
     <thead>
         <tr>
+            <th>Book id</th>
             <th>Title</th>
             <th>category</th>
             <th>image</th>
@@ -96,6 +97,7 @@
 
     <tbody>
         <tr *ngFor="let book of books">
+            <td>{{book.id}}</td>
             <td>{{book.title}}</td>
             <td>{{book.category}}</td>
             <td>{{book.image}}</td>

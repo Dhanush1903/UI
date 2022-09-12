@@ -33,10 +33,17 @@
         class="form-control">
 
 </div> -->
-<div class="mb-3">
+<!-- <div class="mb-3">
     <label for="formFile" class="form-label">Image</label>
     <input class="form-control" [(ngModel)]=book.image type="file" id="formFile">
-  </div>
+  </div> -->
+  <br>
+  <div class="input-group">
+    <span class="input-group-text">Image</span>
+    <input type="text"   aria-label="Price" [(ngModel)]=book.image
+        class="form-control">
+
+</div>
 <br>
 <div class="input-group">
     <span class="input-group-text">Price</span>
