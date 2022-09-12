@@ -77,6 +77,12 @@ export class BookService {
       return this.http.get(`http://localhost:8083/getbookbyemail/${email}`)
 
     }
+    getReadersBook(id:number){
+      return this.http.get(`http://localhost:8085/getspecificbook/${id}`)
+
+    }
+
+
 
 updateBook(id:number, books:{   title:string;
   category:string;

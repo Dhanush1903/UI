@@ -43,10 +43,14 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+const promise= this.bookService.getBooks();
+promise.subscribe((res:any)=>{
+  this.books=res as Book[];
+})
 
 
   }
+  
 
   searchBooks(category:string,authorName:string,price:number,publisher:string){
     const promise=this.bookService.searchBooks(authorName,category,price,publisher)    

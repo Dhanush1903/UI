@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Book from 'Entity/Book';
 import Reader from 'Entity/Reader';
 import { BookService } from 'src/app/book.service';
@@ -23,7 +23,8 @@ export class SearchResultsComponent implements OnInit {
 
 
   constructor(public bookService:BookService,
-    private activatedroute: ActivatedRoute) {
+    private activatedroute: ActivatedRoute,
+    private router:Router) {
       
       
      }
@@ -53,6 +54,8 @@ buyBook(){
     (response:any)=>{
       console.log(response);
       alert("Payment Completed")
+      this.router.navigate(['readerBook',this.id])
+
     },
     function(error){
       console.log(error);
