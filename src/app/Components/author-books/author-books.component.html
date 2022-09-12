@@ -48,14 +48,14 @@
     <div class="col-sm-2" *ngFor="let book of books">
         <div class="card">
             <img [src]="book.image" width="50" height="160" class="card-img-top" alt="image">
-            <div class="card-body">
+            <div class="card-bodys">
                 <p class="card-text">
                     <label> Title: </label>
                     {{book.title}}
                 </p>
                 <p class="card-text">
                     <label> Price: </label>
-                    {{book.price}}
+                    {{book.price | currency:'INR'}}
                 </p>
                 <p class="card-text">
                     <label> Publisher: </label>
