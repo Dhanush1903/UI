@@ -73,8 +73,8 @@
                     <label> Content: </label>
                     {{book.content}}
                 </p>
-                <button type="submit" class="btn btn-danger" (click)="editBook(book.id)">Edit</button>
-                <button (click)="deleteBook(book.id)" style="margin: left 10px ;">Delete</button>
+                <button type="button" class="btn btn-warning" (click)="editBook(book.id)">Edit</button>
+                <button type="submit" class="btn btn-danger" (click)="deleteBook(book.id)" style="margin: left 50px ;">Delete</button>
             </div>
         </div>
     </div>
